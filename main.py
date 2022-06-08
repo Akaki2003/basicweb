@@ -20,7 +20,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///Registration.sqlite"
 app.config["SQLALCHEMY_TRACK_MODIFICATION"] = False
 db = SQLAlchemy(app)
 app.secret_key = "seckey"
-app.permanent_session_lifetime = timedelta(seconds=5)
+app.permanent_session_lifetime = timedelta(seconds=40)
 
 
 class Register(db.Model):
@@ -28,7 +28,7 @@ class Register(db.Model):
     username = db.Column('username',db.String(30))
     password = db.Column('password',db.String(40))
 
-#db.create_all()
+db.create_all()
 
 
 
